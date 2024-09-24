@@ -473,7 +473,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Verify privilege",
+              "name": "Verify Priv.",
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
@@ -484,20 +484,20 @@
               "protocol": "",
               "threats": []
             },
-            "id": "abff40ea-ec31-47b3-a663-e6cefa7e0668",
+            "id": "a767c5cf-96e7-4e2e-9d7b-84efdf14c01a",
             "source": {
               "cell": "1a63c6cb-5eb7-48da-ab12-956071b5ddd3"
             },
             "target": {
-              "cell": "47bd8105-3dc7-4c88-b68c-25ec3f36d045"
+              "cell": "39e4cfcd-f21a-470d-9181-1bf16833bec5"
             },
             "labels": [
-              "Verify privilege"
+              "Verify Priv."
             ],
             "vertices": [
               {
                 "x": -9200,
-                "y": 17680
+                "y": 17720
               }
             ]
           },
@@ -532,13 +532,19 @@
               "protocol": "",
               "threats": []
             },
-            "id": "25d632a7-3343-41db-b77e-615ce94fa2dc",
+            "id": "14ce45da-a0ce-4ef5-9cd8-32909e1d69b6",
             "source": {
-              "cell": "47bd8105-3dc7-4c88-b68c-25ec3f36d045"
+              "cell": "39e4cfcd-f21a-470d-9181-1bf16833bec5"
             },
             "target": {
               "cell": "1a63c6cb-5eb7-48da-ab12-956071b5ddd3"
             },
+            "vertices": [
+              {
+                "x": -9200,
+                "y": 17780
+              }
+            ],
             "labels": [
               "Verified"
             ]
@@ -563,7 +569,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Insert Query and Comments",
+              "name": "Insert Query with Comments",
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
@@ -574,21 +580,21 @@
               "protocol": "",
               "threats": []
             },
-            "id": "dc03c3d9-ec6e-40c6-b68f-e3b987346329",
+            "id": "6c0b22d3-d629-417f-87c5-4d8c20c1ed34",
             "source": {
               "cell": "399e60fb-c7ae-4164-a658-86deac2c9d99"
             },
             "target": {
-              "cell": "f4243368-4f27-4a6e-8786-dbd1792e326d"
+              "cell": "ea90fb44-ec69-4438-bd8e-7b1a25422448"
             },
-            "labels": [
-              "Insert Query and Comments"
-            ],
             "vertices": [
               {
                 "x": -9200,
                 "y": 17880
               }
+            ],
+            "labels": [
+              "Insert Query with Comments"
             ]
           },
           {
@@ -622,17 +628,17 @@
               "protocol": "",
               "threats": []
             },
-            "id": "ff3cd2e3-6452-41a2-ba04-288dfd2f6cbc",
+            "id": "1ec5b5d8-2156-462a-a135-35779f3af4e5",
             "source": {
-              "cell": "f4243368-4f27-4a6e-8786-dbd1792e326d"
+              "cell": "ea90fb44-ec69-4438-bd8e-7b1a25422448"
             },
             "target": {
               "cell": "399e60fb-c7ae-4164-a658-86deac2c9d99"
             },
             "vertices": [
               {
-                "x": -9190,
-                "y": 17960
+                "x": -9200,
+                "y": 17970
               }
             ],
             "labels": [
@@ -745,113 +751,135 @@
           },
           {
             "position": {
-              "x": -9110,
+              "x": -9099,
               "y": 17722
             },
             "size": {
-              "width": 160,
+              "width": 120,
               "height": 60
             },
             "attrs": {
               "text": {
                 "text": "LDAP"
               },
-              "body": {
+              "topLine": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              },
+              "bottomLine": {
                 "stroke": "red",
                 "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
             "visible": true,
-            "shape": "actor",
-            "id": "47bd8105-3dc7-4c88-b68c-25ec3f36d045",
+            "shape": "store",
+            "id": "39e4cfcd-f21a-470d-9181-1bf16833bec5",
+            "zIndex": 16,
             "data": {
-              "type": "tm.Actor",
+              "type": "tm.Store",
               "name": "LDAP",
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "hasOpenThreats": true,
-              "providesAuthentication": false,
+              "isALog": false,
+              "isEncrypted": false,
+              "isSigned": false,
+              "storesCredentials": false,
+              "storesInventory": false,
               "threats": [
                 {
-                  "id": "7d84bf3d-05e8-4e63-a44d-c1a4b907ded2",
-                  "title": "Tampering via SQL DB injection",
+                  "id": "44214c8a-446c-4186-8927-2a9dfa82d154",
+                  "title": "Tampering via SQL Injection",
                   "status": "Open",
                   "severity": "Medium",
-                  "type": "",
-                  "description": "No suggestions available for this context. Add one manually please",
-                  "mitigation": "",
+                  "type": "Tampering",
+                  "description": "Provide a description for this threat",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
                   "modelType": "STRIDE",
                   "new": false,
-                  "number": 5,
+                  "number": 9,
                   "score": ""
                 }
               ],
               "threatFrequency": {
-                "spoofing": 0,
-                "repudiation": 0
+                "tampering": 1,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0
               }
-            },
-            "zIndex": 14
+            }
           },
           {
             "position": {
-              "x": -9076.25,
-              "y": 17880
+              "x": -9099,
+              "y": 17890
             },
             "size": {
-              "width": 112.5,
+              "width": 120,
               "height": 60
             },
             "attrs": {
               "text": {
                 "text": "SQL DB"
               },
-              "body": {
+              "topLine": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": null
+              },
+              "bottomLine": {
                 "stroke": "red",
                 "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
             "visible": true,
-            "shape": "actor",
-            "id": "f4243368-4f27-4a6e-8786-dbd1792e326d",
+            "shape": "store",
+            "id": "ea90fb44-ec69-4438-bd8e-7b1a25422448",
+            "zIndex": 17,
             "data": {
-              "type": "tm.Actor",
+              "type": "tm.Store",
               "name": "SQL DB",
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "hasOpenThreats": true,
-              "providesAuthentication": false,
+              "isALog": false,
+              "isEncrypted": false,
+              "isSigned": false,
+              "storesCredentials": false,
+              "storesInventory": false,
               "threats": [
                 {
-                  "id": "dbaae4ea-a6a2-4b43-af9f-96f302b044f5",
+                  "id": "bc73616e-b242-471c-9b8e-51d87adf13db",
                   "title": "Spoofing",
                   "status": "Open",
                   "severity": "Medium",
-                  "type": "Spoofing",
-                  "description": "No suggestions available for this context. Add one manually please",
-                  "mitigation": "",
+                  "type": "Tampering",
+                  "description": "Provide a description for this threat",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
                   "modelType": "STRIDE",
                   "new": false,
-                  "number": 3,
+                  "number": 6,
                   "score": ""
                 }
               ],
               "threatFrequency": {
-                "spoofing": 1,
-                "repudiation": 0
+                "tampering": 1,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0
               }
-            },
-            "zIndex": 15
+            }
           }
         ]
       }
     ],
     "diagramTop": 1,
     "reviewer": "",
-    "threatTop": 7
+    "threatTop": 9
   }
 }
